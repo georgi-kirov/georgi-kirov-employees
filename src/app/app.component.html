@@ -1,0 +1,27 @@
+<!-- <input type="file" (change)="onChange($event.target.files)"> -->
+<div id="info">
+    <p>Choose a file with following date order for line: EmpID, ProjectID, DateFrom, DateTo</p>
+</div>
+<div id="input-container">
+    <input type="file" name="file" id="file" class="inputfile" (change)="onChange($event.target.files)"/>
+    <label for="file">Choose a file</label>
+</div>
+
+
+<div class="app-component">
+  <p class="error-message" *ngIf="!fileContentData">{{fileContent.message}}</p>
+  <table class="pairs-employee" *ngIf="fileContentData">
+      <tr>
+        <th>Employee ID #1</th>
+        <th>Employee ID #2</th>
+        <th>Project ID</th>
+        <th>Days worked</th>
+      </tr>
+      <tr>
+        <td >{{fileContent.employeeOne}}</td>
+        <td>{{fileContent.employeeTwo}}</td>
+        <td>{{fileContent.projectId}}</td>
+        <td>{{fileContent.totalDays}}</td>
+      </tr>
+    </table>
+</div>
